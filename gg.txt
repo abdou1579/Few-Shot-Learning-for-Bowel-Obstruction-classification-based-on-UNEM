@@ -1,0 +1,23 @@
+some sketching 
+
+We have extracted feautres, so no need to use the feature extractor model, this we should perform the evaluation directly and the support and query sets
+
+
+
+        all_features_support = extracted_features_dic_support['concat_features']
+        all_labels_support = extracted_features_dic_support['concat_labels'].long()
+        all_features_query = extracted_features_dic_query['concat_features']
+        all_labels_query = extracted_features_dic_query['concat_labels'].long()
+
+
+we were provided two datasets, of two different feature extractors, thus we have to choose our own support and query sets to evaluate a model
+
+for shot in shots:
+    Categorical_Sampler 'for Labels'
+    sampler_support = SamplerSupport(sampler)
+    sampler_query = SamplerQuery(sampler)
+
+    task_generator = Tasks_Generator(k_eff=self.args.k_eff, n_ways=self.args.n_ways, shot=shot, n_query=self.args.n_query, loader_support=test_loader_support, loader_query=test_loader_query,    train_mean=train_mean, log_file=self.log_file) 'meaning we prepare the proper datasets k-way n-shots  for both support and query sets'
+
+    here the bullshit starts we choose which method we going to use in our proejct its U-PADDLE
+    
